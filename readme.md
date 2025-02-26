@@ -1,4 +1,7 @@
 ## OS SP25 Templates & Resources
 
-6. [PA6](pa6): Multi-threaded DNS Resolver
-  - This is extra credit assignment #2
+### Programming Assignments
+6. Device Driver
+
+### Extra Credit
+2. Multi-threaded DNS Resolver

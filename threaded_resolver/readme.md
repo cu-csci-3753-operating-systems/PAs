@@ -1,4 +1,4 @@
-### Multi-threaded DNS Resolver
+## Multi-threaded DNS Resolver
 
 ### File overview
 - `input/`: directory of text files containing host names that will be used as input to your program
