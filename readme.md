@@ -1,7 +1,8 @@
 ## OS SP25 Templates & Resources
 
 ### Programming Assignments
-2. LRU
+2. LRU Paging
+3. Predictive Paging
 6. Device Driver
 
 ### Extra Credit

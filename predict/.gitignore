@@ -1,0 +1,6 @@
+*.o
+*.csv
+*.pdf
+pager-predict.o
+simulator.o
+test-predict

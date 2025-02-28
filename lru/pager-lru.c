@@ -15,7 +15,7 @@ void pageit(Pentry q[MAXPROCESSES]) {
   int proc;
   int page;
 
-  // initiali timestamp array on first run
+  // initialise timestamp array on first run
   if (!initialized) {
     for (proc = 0; proc < MAXPROCESSES; proc++) {
       for (page = 0; page < MAXPROCPAGES; page++) {
