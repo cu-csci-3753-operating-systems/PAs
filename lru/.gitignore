@@ -1,0 +1,5 @@
+*.o
+*.csv
+*.pdf
+test-basic
+test-lru
