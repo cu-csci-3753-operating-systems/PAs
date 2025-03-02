@@ -8,7 +8,7 @@
 - `pager-basic.c`: basic paging algorithm implemtnation
 - `pager-lru.c`: where your LRU paging implemtnation should live
 - `programs.c`: programs used by the paging simulator
-- `see.R`: R-script to visually display running/blocking process activity
+- [`see.R`](../common/see.R): R-script to visually display running/blocking process activity
   - Use `./test-* -csv` to generate the necessary CSV files
 - `simulator.c`: paging simulator source code (for reference only)
 - `simulator.h`: paging simulator header file

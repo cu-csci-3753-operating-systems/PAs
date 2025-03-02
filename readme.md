@@ -6,4 +6,5 @@
 6. Device Driver
 
 ### Extra Credit
+1. DNS Resolver
 2. Multi-threaded DNS Resolver
