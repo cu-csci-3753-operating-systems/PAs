@@ -3,6 +3,7 @@
 ### Programming Assignments
 2. LRU Paging
 3. Predictive Paging
+4. Shared Array
 6. Device Driver
 
 ### Extra Credit
