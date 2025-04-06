@@ -132,11 +132,13 @@ By default, you will see 2 entries as below.
 ```sh
 CONFIG_SYSTEM_TRUSTED_KEYS="debian/canonical-certs.pem"
 CONFIG_SYSTEM_REVOCATION_KEYS="debian/canonical-revoked-certs.pem"
+CONFIG_DEBUG_INFO_BTF=y
 ```
 You need to change them, and save the file.
 ```sh
 CONFIG_SYSTEM_TRUSTED_KEYS=""
 CONFIG_SYSTEM_REVOCATION_KEYS=""
+CONFIG_DEBUG_INFO_BTF=n
 ```
 Now compile and install the kernel by running the following commands.  Typically it takes a long time to compile the kernel the first time.  Increasing the -j parameter can sometimes speedup the compilation, but it's best not to go more than 2 times the number of CPUs allocated to your VM.  You can tell how many CPUs you have with either the nproc or lscpu commands. Noted that during the compilation, there may be some questions about configuration reloading, and compilation log. You can answer yes, you don't need to pay attention to those.
 ```sh
