@@ -11,7 +11,7 @@
 #define BUFFER_SIZE xxx
 
 struct file_operations char_driver_file_operations = {
-    .ownwer = THIS_MODULE,
+    .owner = THIS_MODULE,
     /*
      add the function pointers to point to corresponding file operations. have a
      look at the linux/include/fs.h file for examples
