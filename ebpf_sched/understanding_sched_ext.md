@@ -99,11 +99,20 @@ At a high-level of abstraction, a process scheduler is a resource allocation eng
 The Linux OS implements its process scheduler as a scheduler class, which can be instantiated differently to meet custom-requirements. The Linux OS-Process Scheduler design can be understood to have the following abstract components: (1) a `core kernel scheduler` and (2) default scheduler instantiations - (a) a `fair scheduler`; (b) `real-time scheduler`; for meeting the needs of general-purpose tasks and real-time constrained tasks respectively.
 
 
+![Diagram](figures/linux-schedulers.png "Figure 1: Linux Scheduler Architecture")
+
+
 In this assignment, we shall learn about the extensible scheduler framework ( `sched_ext`) that's been designed using the BPF-technology stack to operate at the same level or priority as the default Linux Fair scheduler. This helps to ensure that in the scenario of a failure mode within the custom BPF-based scheduler, the Linux OS can switch seamlessly into the default fair scheduler. Note that when developing a custom user-space scheduler, that runs atop `sched_ext`, we need to develop the scheduler with two stages - one operating in the user space (eg. `simple.c` in above figure ) and a component that operates in the kernel space (eg. `simple.bpf.c` in above figure). While this diagram helps to understand the organization of the code that contributes to the development of the scheduler, it does not help us visualize the architecture of a process scheduler.
+
+![Diagram](figures/sched-ext-layers.png "Figure 2: Extensible Scheduler Class (sched-ext) based scheduler design")
+
 
 The architecture of the process scheduler can be understood to comprise of a system of dispatch-queues (DSQs) that are responsible for selection of tasks based on a **first-in-first-out (FIFO)** scheduling policy, or a custom priority-based scheduling policy. Additionally, there are dispatch-queues that are local to each computing resource which operate as a FIFO-queues. The task of designing a process scheduler thus involves instantiating a system of dispatch-queues, and determining how tasks shall be selected and inserted into these queues.
 
 The design of the `minimal_scheduler` in the above section, can be understood using the following visualization:
+
+
+![Diagram](figures/scheduler_architecture.png "Figure 3: Sched-Ext based Scheduler Architecture")
 
 Note that there are 3 types of physical entities in this image -
 
