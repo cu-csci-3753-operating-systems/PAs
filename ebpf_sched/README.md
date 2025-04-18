@@ -26,6 +26,17 @@ Today, eBPF is used extensively to drive a wide variety of use cases: Providing 
 
 The above excerpt is taken from the [official documentation of `sched-ext`.](https://docs.kernel.org/scheduler/sched-ext.html)
 
+## PA7 : Writing a Custom User-space based Process Scheduler using BPF
+
+Please follow the instructions provided in the following pages, to complete the programming assignment. 
+1. [Installation](https://github.com/cu-csci-3753-operating-systems/PAs/blob/main/ebpf_sched/installation.md)
+2. [Understanding Process Schedulers and the Minimal Scheduler](https://github.com/cu-csci-3753-operating-systems/PAs/blob/main/ebpf_sched/understanding_sched_ext.md)
+
+
+You may review the following videos before you proceed with your programming assignment: 
+1. [Writing a minimal sched-ext scheduler with eBPF + C](https://www.youtube.com/watch?v=cDM_bNKbBII)
+2. [Writing production-ready schedulers using SCHED-EXT](https://www.youtube.com/watch?v=KoBwlQ0AQzg)
+
 
 
 ## References
@@ -33,8 +44,6 @@ The above excerpt is taken from the [official documentation of `sched-ext`.](htt
 2. [The History of eBPF](https://www.youtube.com/watch?v=sYxUOKi3Q00)
 3. [Kernel tracking using eBPF](https://www.youtube.com/watch?v=JqnWp6X6otw)
 4. [Getting Started with BPF Observability - Brenda Gregg](https://www.youtube.com/watch?v=bGAVrtb_tFs)
-5. [Writing a minimal sched-ext scheduler with eBPF + C](https://www.youtube.com/watch?v=cDM_bNKbBII)
-6. [Writing production-ready schedulers using SCHED-EXT](https://www.youtube.com/watch?v=KoBwlQ0AQzg)
 
 
 ## Acknowledgement
