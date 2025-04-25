@@ -45,11 +45,11 @@ The [`asmlinkage`](https://kernelnewbies.org/FAQ/asmlinkage) keyword tells the c
 
 Finally, recompile, install, and boot into the modified kernel using the same steps from the prior assignment:
 ```
-make -j8
-sudo make modules_install
-sudo make install
-sudo update-grub
-sudo reboot
+$ make -j8
+$ sudo make modules_install
+$ sudo make install
+$ sudo update-grub
+$ sudo reboot
 ```
 If the above completed without errors, you should now boot into your new kernel and proceed to the next step.
 
@@ -66,14 +66,14 @@ int main() {
 ```
 The first argument to the [`syscall()`](https://man7.org/linux/man-pages/man2/syscall.2.html) function is the system call number we assigned previously. Additional arguments would be passed to the function being called. If successful, a system call returns 0, otherwise it returns -1.
 ```shell
-gcc hello_test.c
-./a.out
-echo $?
+$ gcc hello_test.c
+$ ./a.out
+$ echo $?
 0
 ```
 The `echo` command above is used to print the return status of the previous command executed. Now that the system call has been invoked, the message we printed should be shown in the kernel log:
 ```shell
-sudo dmesg
+$ sudo dmesg
 [sudo] password for student: 
 [   16.130924] vmxnet3 0000:03:00.0 ens160: intr type 3, mode 0, 9 vectors allocated
 [   16.132015] vmxnet3 0000:03:00.0 ens160: NIC Link is Up 10000 Mbps
@@ -125,7 +125,7 @@ int main(int argc, char **argv) {
 ### Hints
 You can compile just your system call code with:
 ```
-make arch/x86/kernel/<file>.o
+$ make arch/x86/kernel/<file>.o
 ```
 This will help identify any syntactical errors in your code without recompiling the entire kernel. Do note that this does **not** omit the need to recompile and reinstall the kernel for the system call to actually be run.
 
@@ -163,11 +163,11 @@ obj-m := hello_module.o
 ```
 In this line, `obj-m` means module, and the line as a whole tells the compiler to create a module object named `hello_module.o`. To compile the module into something usable, issue the following command:
 ```
-make -C /lib/modules/$(uname -r)/build M=$PWD
+$ make -C /lib/modules/$(uname -r)/build M=$PWD
 ```
 If successful, the following files should have been made:
 ```
-ls -l
+$ ls -l
 -rw-rw-r-- 1 user user    332 Sep  1 23:27 hello_module.c
 -rw-rw-r-- 1 user user 209832 Sep  1 23:34 hello_module.ko
 -rw-rw-r-- 1 user user     36 Sep  1 23:34 hello_module.mod
@@ -183,20 +183,20 @@ Followup question: can you extend the `Makefile` such that the compilation comma
 
 In the above, notice the `.ko` file. This is the kernel module that will be loaded into the running kernel. Install the module and check that it's installed:
 ```
-sudo insmod hello_module.ko
-lsmod | grep hello
+$ sudo insmod hello_module.ko
+$ lsmod | grep hello
 hello_module            12288  0
 ```
 Running `dmesg` should also display the message printed by your module when initialised:
 ```
-sudo dmesg
+$ sudo dmesg
 [...]
 [ 2643.230212] Inside hello_init function
 ```
 Now remove the module and check the above outputs again to verify the module is no longer loaded, and the appropriate messages are in the kernel log:
 ```
-sudo rmmod hello_module
-sudo dmesg
+$ sudo rmmod hello_module
+$ sudo dmesg
 [...]
 [ 2657.344579] Inside hello_exit function
 ```
