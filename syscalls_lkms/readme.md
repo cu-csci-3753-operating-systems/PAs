@@ -207,3 +207,4 @@ $ sudo dmesg
 - We will confirm the operation of your system calls and LKM by running a test program against your VM
 - Ensure your VM boots, by default, into the kernel version that includes both your system calls
 - Make sure all the specified files throughout this assignment are in the correct locations on your VM
+- A 1 page report of things you learned, difficulties you encountered and how you overcame them, comments about the assignment, etc.

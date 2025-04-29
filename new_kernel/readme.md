@@ -97,6 +97,7 @@ Linux csci3753-vm1-IdentiKey 6.12.y-rev1 #1 SMP PREEMPT_DYNAMIC Mon Dec 16 19:21
 - A screenshot of your GRUB menu showing the new kernel as an option
 - A screenshot of the output of the `uname -a` command showing the new kernel version
 - We will confirm your VM boots, **by default**, into the `-rev1` kernel. Thus, you must boot into the new kernel successfully, and ensure it automatically boots by default
+- A 1 page report of things you learned, difficulties you encountered and how you overcame them, comments about the assignment, etc.
 
 ### Hints
 - If you need to start over, reboot your VM into the original `-generic` kernel, delete the `/home/kernel/x.y.z` directory and start from the beginning of this write-up.
