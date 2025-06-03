@@ -52,7 +52,7 @@ This will download a specified branch of the kernel sources from [kernel.org](ht
 ## Compiling the kernel
 The first step is installing required dependencies for kernel compilation:
 ```
-$ sudo apt-get install make gcc libncurses-def flex bison build-essential bc libssl-dev libelf-dev dwarves zstd
+$ sudo apt-get install make gcc libncurses-dev flex bison build-essential bc libssl-dev libelf-dev dwarves zstd
 ```
 
 Next, generate a configuration file that tells the kernel what options should be compiled. These configuration options include things like specific hardware support, networking configuration, and more.
