@@ -55,12 +55,14 @@ The first step is installing required dependencies for kernel compilation:
 $ sudo apt-get install make gcc libncurses-dev flex bison build-essential bc libssl-dev libelf-dev dwarves zstd
 ```
 
-Next, generate a configuration file that tells the kernel what options should be compiled. These configuration options include things like specific hardware support, networking configuration, and more.
+Once you have the Linux source code, and installed the dependencies, you can compile the kernel. The next step is to create the config file for your kernel build. Make sure you run this command in your recently created kernel source directory:```
+
 ```
 $ cd /home/kernel/linux-6.12.y
-$ make defconfig
+$ sudo cp /boot/config-$(uname -r) .config
 $ make menuconfig
 ```
+The command uname –r gives you the current version of the kernel you are using.  This ensures you are compiling the kernel source for the same version of the kernel you're currently running on.
 The `menuconfig` option will open an [ncurses](https://en.wikipedia.org/wiki/Ncurses) program that will allow you to set desired kernel parameters. These are written to the aforementioned configuration file.
 
 ![menuconfig 1](images/menu1.png)
@@ -72,6 +74,22 @@ Navigate this program with the arrow and enter keys:
 4. Exit the program by selecting **\<Exit\>**, and answering **\<Yes\>** when prompted to save your changes
 
 ![menuconfig 2](images/menu2.png)
+
+One last thing before we compile the kernel, we need to remove the kernel signature checking in .config. It will cause a compilation error later on, and we don't need it.
+```
+cd /home/kernel/linux-6.12.y
+sudo vim .config
+```
+By default, you will see 2 entries as below.
+```
+CONFIG_SYSTEM_TRUSTED_KEYS="debian/canonical-certs.pem"
+CONFIG_SYSTEM_REVOCATION_KEYS="debian/canonical-revoked-certs.pem"
+```
+You need to change them, and save the file.
+```
+CONFIG_SYSTEM_TRUSTED_KEYS=""
+CONFIG_SYSTEM_REVOCATION_KEYS=""
+```
 
 Now compile and install the kernel by running the following commands from the directory where your kernel sources live. Generally, compiling the kernel will take quite some time. Increasing the number supplied to the `-j#` parameter will utilise more CPU cores for compilation, however this can be bottlenecked by the amount of available RAM. Try initially with the number of CPUs you have (you can use the `nproc` command to determine this).
 ```shell
