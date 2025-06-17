@@ -30,7 +30,7 @@ Once successfully invoked, your interactive program should open the supplied fil
 - While many sources on the internet may guide you to use the `scanf()` function to take in user input, do be aware of its [dangers](https://www.sekrit.de/webdocs/c/beginners-guide-away-from-scanf.html)
 - Pay close attention to the write functionality and adhere to standard practices when working with C strings
 
-We have included a pre-compiled binary to use as a reference for how your program should behave. Download it [here](sample_filetest), and use `chmod` to make it executable.
+We have included a pre-compiled binary to use as a reference for how your program should behave. Download it [here](https://github.com/cu-csci-3753-operating-systems/PAs/blob/main/file_tester/pa2test), and use `chmod` to make it executable.
 
 ## Testing
 Suggested means of ensuring your program works correctly include `echo`, `cat`, `head`, `tail`, `hexdump`, and other command line utilities to ensure your program writes, reads, and seeks appropriately. Additionally, beware of using a text editors like [gedit](https://en.wikipedia.org/wiki/Gedit) or VSCode, as they can obfuscate certain characters.
