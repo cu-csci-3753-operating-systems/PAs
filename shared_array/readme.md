@@ -115,7 +115,7 @@ int array_put(array *s, char *hostname);  // place element into the array, block
 int array_get(array *s, char **hostname); // remove element from the array, block when empty
 void array_free(array *s);                // free the array's resources
 ```
-Notice the data types being used in the put and get functions - this array stores C strings that are given to you in the form of [hostnames](../common/hostnames/) (you can download the zip file [here](../common/hostnames/) to obtain your program's input). Your array should store a **maximum of 8** strings at once. This, and other fixed values you may need should be defined as macros in your header file.
+Notice the data types being used in the put and get functions - this array stores C strings that are given to you in the form of [hostnames](../common/hostnames/) (you can download the zip file [here](../common/hostnames/hostnames.zip) to obtain your program's input). Your array should store a **maximum of 8** strings at once. This, and other fixed values you may need should be defined as macros in your header file.
 
 Your array must incorporate some form of synchronisation and/or signaling mechanisms (mutexes, semaphores, condition variables, etc.) to ensure there are no [race conditions](https://en.wikipedia.org/wiki/Race_condition), [buy waiting](https://en.wikipedia.org/wiki/Busy_waiting), or lock-ups. You are allowed to use external libraries to accomplish this, such as the C semaphore library.
 
