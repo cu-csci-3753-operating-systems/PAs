@@ -11,7 +11,7 @@ int stack_push(stack *s, int element); // place element on the top of the stack
 int stack_pop(stack *s, int *element); // remove element from the top of the stack
 void stack_free(stack *s);             // free the stack's resources
 ```
-In C, interfaces are defined in a standalone header file. A more complete version of this can be seen in [`stack.h`](stack.h), including a `struct` that holds our data.
+In C, interfaces are defined in a standalone header file. A more complete version of this can be seen in `stack.h`, including a `struct` that holds our data.
 ```c
 #pragma once
 
@@ -32,7 +32,7 @@ Some notes about the above code:
 - Each method of our interface, other than `stack_free()` as that should never fail, returns an integer to indicate the status of an operation. Generally, a zero means success, and any other value means failure
 - The `stack_pop()` function passes the popped value back the caller via a reference, rather than returning this value.
 
-Now, the implementation of the aforementioned prototypes lives in the [`stack.c`](file):
+Now, the implementation of the aforementioned prototypes lives in the `stack.c`:
 ```c
 #include "stack.h"
 
