@@ -60,6 +60,12 @@ The simulator also exports the functions `pagein()` and `pageout()`, which are u
 
 These functions return 0 if the paging request cannot be processed (due to exceeding the limit of physical pages or because another paging operation is currently in process on the requested page) or if the request is invalid (paging operation requests non-existent page, etc).
 
+![Figure 1](images/img1.jpeg)
+
+Figure 1 shows the possible states that a virtual page can occupy, as well as the possible transitions between these states.  Note that the page map values alone do not define all possible page states.  We must also account for the possible operations currently underway on a page to fully define its state.  While the page map for each process can be obtained from the pageit() input array of structs, there is no interface to directly reveal any operations underway on a given page.  If knowing whether or not a paging operation is underway on a given page (and thus knowing the full state of a page) is necessary for your pageit() implementation, you must maintain this data yourself.
+
+
+
 ---
 
 ## The Simulated Programs
@@ -133,6 +139,9 @@ Note that while you know the structure of these programs, any program's flow is 
 ## Some Implementation Ideas
 
 In general, your `pageit()` implementation will need to follow the basic flow presented in Figure 2.  You will probably spend most of your time deciding how to implement the “Select a Page to Evict” element.
+
+![Figure 2](images/img2.jpeg)
+
 
 A basic “one-process-at-a-time” implementation is provided for you.  This implementation never actually ends up having to swap out any pages.  Since only one process is allocated pages at a time, no more than 20 pages are ever in use.  When each process completes, it releases all of its pages and the next process is allowed to allocate pages and run.  This is a very simple solution, and as you might expect, does not provide very good performance.  Still, it provides a demonstration of the simulator API.  See `pager-basic.c` for more information.
 
