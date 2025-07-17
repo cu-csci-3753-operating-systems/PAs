@@ -171,6 +171,7 @@ When you submit your assignment, you must provide the following:
 
 - The `pager-lru.c` of your LRU paging implementation
 - Any additional `.c` and `.h` files you might have created to support your pager implementations
+- A 1 page report(.pdf) of things you learned, difficulties you encountered and how you overcame them, comments about the assignment, etc.
 
 If the only file you modified is `pager-lru.c`, simply type `make submit` inside your working directory.  Enter your Identikey username when prompted, make will generate a `PA7-<username>.txt` file for submission to Canvas.
 
