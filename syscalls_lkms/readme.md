@@ -60,7 +60,7 @@ Once in the new kernel, you should be able to use the new system call. We will c
 #include <stdlib.h>
 
 int main() {
-    long res = syscall(462);
+    long res = syscall(463);
     return res;
 }
 ```
