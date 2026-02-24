@@ -92,7 +92,7 @@ Refer to previous assignment instructions for compiling and installing kernel mo
 
 To test the functionality of your implementation, use command line utilities such as `echo`, `cat`, `head`, `tail`, or the file tester program you made. Ensure you thoroughly test edge cases like seeking, reading, or writing before the beginning or beyond the end of the device buffer.
 
-We have provided a pre-compiled LKM for you to use as a reference. It can be downloaded [here](sample_char_driver.ko) and loaded into your **6.12.25 kernel**. Note that this example driver **uses a major number of 510**, meaning an additional device driver file will need to be created. You are able to have this one loaded alongside the one you are implementing that has a major number of 511. Consider this the expected behaviour of your implementation.
+We have provided a pre-compiled LKM for you to use as a reference. It can be downloaded [here](sample_char_driver_6_12_65.ko) and loaded into your **6.12.65 kernel** (If you are using a different kernel version, we provide samples for a number of differnt versions in the repo). Note that this example driver **uses a major number of 510**, meaning an additional device driver file will need to be created. You are able to have this one loaded alongside the one you are implementing that has a major number of 511. Consider this the expected behaviour of your implementation.
 
 ## Submission requirements
 - Your `char_driver.c` source code
